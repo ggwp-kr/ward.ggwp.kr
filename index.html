@@ -197,8 +197,8 @@
           success: function (data, status)
           {
             if ("success" == status) {
-              var tempTag =
-                '<p class="lead"><a href="https://ward.ggwp.kr/' + data.wardUrl+'">https://ward.ggwp.kr/' + data.wardUrl + '</a></p>';
+              <!-- var tempTag = '<p class="lead"><a href="https://ward.ggwp.kr/' + data.wardUrl+'">https://ward.ggwp.kr/' + data.wardUrl + '</a></p>'; -->
+              var tempTag = '<p class="lead"><a href="https://ward.fastapi.shop/' + data.wardUrl+'">https://ward.fastapi.shop/' + data.wardUrl + '</a></p>';
               $tempDoc.append(tempTag);
               $('.ward-url').append($tempDoc);
             }
