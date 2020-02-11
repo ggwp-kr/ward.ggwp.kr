@@ -1,25 +1,39 @@
-<html lang="en">
+<!--
+    ___   ___      ________   ________   ___       __    ________     ___  __     ________          ___   ___    
+   /  /| /  /|    |\   ____\ |\   ____\ |\  \     |\  \ |\   __  \   |\  \|\  \  |\   __  \        |\  \ |\  \   
+  /  / //  / /    \ \  \___| \ \  \___| \ \  \    \ \  \\ \  \|\  \  \ \  \/  /|_\ \  \|\  \       \ \  \\ \  \  
+ /  / //  / /      \ \  \  ___\ \  \  ___\ \  \  __\ \  \\ \   ____\  \ \   ___  \\ \   _  _\       \ \  \\ \  \ 
+|\  \/|\  \/        \ \  \|\  \\ \  \|\  \\ \  \|\__\_\  \\ \  \___|___\ \  \\ \  \\ \  \\  \|       \/  /|\/  /|
+\ \  \\ \  \         \ \_______\\ \_______\\ \____________\\ \__\  |\__\\ \__\\ \__\\ \__\\ _\       /  // /  // 
+ \ \__\\ \__\         \|_______| \|_______| \|____________| \|__|  \|__| \|__| \|__| \|__|\|__|     /_ // /_ //  
+  \|__| \|__|                                                                                      |__|/ |__|/   
+www.ggwp.kr@gmail.com                                                                                                         
+-->
+<html lang="kr">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <!-- <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico"> -->
-  <title>Cover Template for Bootstrap</title>
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/cover/">
+  <meta name="description" content="WARD GGWP - Warding Your URL">
+  <meta name="author" content="www.ggwp.kr@gmail.com">
+  <meta name="keyword" content="ggwp">
 
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.ggwp.kr">
+  <meta property="og:title" id="ogtitle" content="WARD GGWP - Warding Your URL">
+  <meta property="og:description" id="ogdesc" content="WARD GGWP - Warding Your URL">
+  <meta property="og:image" id="ogimg" content="https://www.ggwp.kr/img/logo.png">
+
+  <title>WARD GGWP - Warding Your URL</title>
   <!-- Bootstrap core CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-  <!-- Custom styles for this template -->
   <!-- <link href="cover.css" rel="stylesheet"> -->
+  <!-- Custom styles for this template -->
   <style>
     /*
- * Globals
- */
-
+  * Globals
+  */
     /* Links */
     a,
     a:focus,
@@ -137,25 +151,24 @@
   <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
     <header class="masthead mb-auto">
       <div class="inner">
-        <h3 class="masthead-brand">Cover</h3>
+        <h3 class="masthead-brand">GGWP</h3>
         <nav class="nav nav-masthead justify-content-center">
           <a class="nav-link active" href="#">Home</a>
-          <a class="nav-link" href="#">Features</a>
-          <a class="nav-link" href="#">Contact</a>
+          <!-- <a class="nav-link" href="#">Features</a> -->
+          <!-- <a class="nav-link" href="#">Contact</a> -->
         </nav>
       </div>
     </header>
 
     <main role="main" class="inner cover">
-      <h1 class="cover-heading">Ward Your URL.</h1>
-      <p class="lead">Ward your url pages. Download, edit the text, and add your own fullscreen background photo to make
-        it your own.</p>
+      <h1 class="cover-heading">Warding Your URL</h1>
+      <p class="lead">[Warding]Click to Shorten Url.</p>
       <!-- <p class="lead">
           <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
-        </p> -->
+        </p> -->CC
       <form id="urlForm" method="post" action="/">
-        <input type="text" id="url" name="url">
-        <button type="submit" class="send">Send</button>
+        <input type="text" id="url" name="url" placeholder="http://" value="http://">
+        <button type="submit" class="send">Warding</button>
       </form>
       <div class="ward-url">
         <!--<p class="lead"><a href="https://www.ggwp.kr/">https://www.ggwp.kr/</a></p>-->
@@ -164,7 +177,10 @@
 
     <footer class="mastfoot mt-auto">
       <div class="inner">
-        <p>herogate92@gmail.com</p>
+        <p class="m-0 text-center text-white">
+          <a class="btn btn-github btn-outline-light" href="https://github.com/ggwp-kr/ggwp-kr.github.io"><i class="fab fa-github fa-1x" aria-hidden="true"></i></a>
+        </p>
+        <p>www.ggwp.kr@gmail.com</p>
       </div>
     </footer>
   </div>
@@ -172,40 +188,39 @@
 
   <!-- Bootstrap core JavaScript -->
   <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> 
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
 
   <script>
     var $tempDoc = $(document.createDocumentFragment());
-    var apiServerUrl = 'https://ward.fastapi.shop';
-    //var apiServerUrl = 'http://localhost:9990';
+    var apiServerUrl = 'https://go.ggwp.kr';
     $("#urlForm").submit(function (e) {
       e.preventDefault();
       var urlFormData = $("#urlForm").serialize();
-      if( $("#url").val().trim() == "" )
-      {
+      if ($("#url").val().trim() == "") {
         return false;
       }
-      else{
-          $.ajax({
+      else {
+        $.ajax({
           url: apiServerUrl + '/ward',
           type: "post",
           async: true,
           data: urlFormData,
           dataType: "json",
-          success: function (data, status)
-          {
+          success: function (data, status) {
             if ("success" == status) {
-              <!-- var tempTag = '<p class="lead"><a href="https://ward.ggwp.kr/' + data.wardUrl+'">https://ward.ggwp.kr/' + data.wardUrl + '</a></p>'; -->
-              var tempTag = '<p class="lead"><a href="https://ward.fastapi.shop/' + data.wardUrl+'">https://ward.fastapi.shop/' + data.wardUrl + '</a></p>';
+              var tempTag = '<p class="lead"><a href="https://go.ggwp.kr/' + data.wardUrl + '">https://go.ggwp.kr/' + data.wardUrl + '</a></p>';
               $tempDoc.append(tempTag);
               $('.ward-url').append($tempDoc);
             }
           },
           statusCode: {
-          404: function () {
-            alert("Api Server Error");
-            } 
+            404: function () {
+              alert("Api Server Error");
+            }
           }
         });
       }
