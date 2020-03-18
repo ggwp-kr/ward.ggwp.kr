@@ -201,7 +201,7 @@ www.ggwp.kr@gmail.com
     var ward_url_array = getCookie('wardurl').split(',');
     if (ward_url_array.length > 1) {
       var Element_Ward_URL = document.getElementsByClassName('ward-url')[0];
-      ward_url_array.forEach(element => Element_Ward_URL.innerHTML = gen_tagWardUrl(element));
+      ward_url_array.forEach(element => Element_Ward_URL.innerHTML += gen_tagWardUrl(element));
     }
 
     var $tempDoc = $(document.createDocumentFragment());
