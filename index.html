@@ -27,8 +27,8 @@ www.ggwp.kr@gmail.com
   <!-- Bootstrap core CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/brands.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/brands.min.css" />
   <!-- <link href="cover.css" rel="stylesheet"> -->
   <!-- Custom styles for this template -->
   <style>
@@ -160,7 +160,7 @@ www.ggwp.kr@gmail.com
         </nav>
       </div>
     </header>
-    
+
     <main role="main" class="inner cover">
       <div class="alert alert-dark" role="alert">서버 문제로 인해 서비스가 원활하지 않습니다.</div>
       <h1 class="cover-heading">Warding Your URL</h1>
@@ -180,7 +180,8 @@ www.ggwp.kr@gmail.com
     <footer class="mastfoot mt-auto">
       <div class="inner">
         <p class="m-0 text-center text-white">
-          <a class="btn btn-github btn-outline-light" href="https://github.com/ggwp-kr/ggwp-kr.github.io"><i class="fab fa-github fa-1x" aria-hidden="true"></i></a>
+          <a class="btn btn-github btn-outline-light" href="https://github.com/ggwp-kr/ggwp-kr.github.io"><i
+              class="fab fa-github fa-1x" aria-hidden="true"></i></a>
         </p>
         <p>www.ggwp.kr@gmail.com</p>
       </div>
@@ -197,6 +198,13 @@ www.ggwp.kr@gmail.com
     crossorigin="anonymous"></script>
 
   <script>
+    var ward_url_array = getCookie('wardurl').split(',');
+    if(ward_url_array.length > 1)
+    {
+      var Element_Ward_URL = document.getElementsByClassName('ward-url')[0];
+      ward_url_array.forEach(element => Element_Ward_URL.append(gen_tagWardUrl(element)));
+    }
+
     var $tempDoc = $(document.createDocumentFragment());
     var apiServerUrl = 'https://go.ggwp.kr';
     $("#urlForm").submit(function (e) {
@@ -217,6 +225,10 @@ www.ggwp.kr@gmail.com
               var tempTag = '<p class="lead"><a href="https://go.ggwp.kr/' + data.wardUrl + '">https://go.ggwp.kr/' + data.wardUrl + '</a></p>';
               $tempDoc.append(tempTag);
               $('.ward-url').append($tempDoc);
+              //document.cookie = 'wardurl='+'$tempDoc,'+getCookie('wardurl');
+              setCookie('wardurl',
+                        data.wardUrl + ',' + getCookie('wardurl'),
+                        30);
             }
           },
           statusCode: {
@@ -227,6 +239,33 @@ www.ggwp.kr@gmail.com
         });
       }
     });
+    function gen_tagWardUrl(wardurl)
+    {
+      return '<p class="lead"><a href="https://go.ggwp.kr/' + wardurl + '">https://go.ggwp.kr/' + wardurl + '</a></p>';
+    }
+
+    function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+
+    function setCookie(cname, cvalue, exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));//day*24hh*60mm*60ss*1000mis
+      var expires = "expires=" + d.toGMTString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
   </script>
 
 </body>
