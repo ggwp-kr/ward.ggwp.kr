@@ -199,10 +199,9 @@ www.ggwp.kr@gmail.com
 
   <script>
     var ward_url_array = getCookie('wardurl').split(',');
-    if(ward_url_array.length > 1)
-    {
+    if (ward_url_array.length > 1) {
       var Element_Ward_URL = document.getElementsByClassName('ward-url')[0];
-      ward_url_array.forEach(element => Element_Ward_URL.append(gen_tagWardUrl(element)));
+      ward_url_array.forEach(element => Element_Ward_URL.innerHTML = gen_tagWardUrl(element));
     }
 
     var $tempDoc = $(document.createDocumentFragment());
@@ -227,8 +226,8 @@ www.ggwp.kr@gmail.com
               $('.ward-url').append($tempDoc);
               //document.cookie = 'wardurl='+'$tempDoc,'+getCookie('wardurl');
               setCookie('wardurl',
-                        data.wardUrl + ',' + getCookie('wardurl'),
-                        30);
+                data.wardUrl + ',' + getCookie('wardurl'),
+                30);
             }
           },
           statusCode: {
@@ -239,9 +238,14 @@ www.ggwp.kr@gmail.com
         });
       }
     });
-    function gen_tagWardUrl(wardurl)
-    {
+    function gen_tagWardUrl(wardurl) {
       return '<p class="lead"><a href="https://go.ggwp.kr/' + wardurl + '">https://go.ggwp.kr/' + wardurl + '</a></p>';
+    }
+
+    function htmlToElements(html) {
+      var template = document.createElement('template');
+      template.innerHTML = html;
+      return template.content.childNodes;
     }
 
     function getCookie(cname) {
